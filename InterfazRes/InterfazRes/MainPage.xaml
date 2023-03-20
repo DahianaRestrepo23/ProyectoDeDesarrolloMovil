@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:InterfazRes.viewModel"
+             x:Class="InterfazRes.MainPage">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel x:Name="vm" />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="LightBlue">
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="estiloColorAlingLabel" TargetType="Label">
+                        <Setter Property="TextColor" Value="Black" />
+                        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                        <Setter Property="FontSize" Value="18" />
+                        <Setter Property="FontAttributes" Value="Bold" />
+                    </Style>
+                    <Style x:Key="estiloColorAlingEntry" TargetType="Entry">
+                        <Setter Property="PlaceholderColor" Value="Black" />
+                        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                        <Setter Property="TextColor" Value="DarkSlateGray" />
+                        <Setter Property="WidthRequest" Value="200" />
+                        <Setter Property="HorizontalTextAlignment" Value="Center" />
+                    </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+            <Frame VerticalOptions="FillAndExpand" Margin="35" CornerRadius="20" >
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Image Source="logoLogin.png" WidthRequest="100" />
+                    <Label Style="{StaticResource estiloColorAlingLabel}" Text="Usuario" Margin="0,50,0,0" />
+                    <Entry Style="{StaticResource estiloColorAlingEntry}" x:Name="txtUsuario" Placeholder="Ingrese el usuario" />
+                    <Label Style="{StaticResource estiloColorAlingLabel}" Margin="0,20,0,0" Text="Contraseña" />
+                    <Entry Style="{StaticResource estiloColorAlingEntry}" IsPassword="True" x:Name="txtContrasena" Placeholder="Ingrese la contraseña" />
+                    <Button CornerRadius="20" Margin="0,40,0,0" WidthRequest="300" Text="Ingresar" TextTransform="Uppercase" TextColor="White" BackgroundColor="DarkBlue" Clicked="ButtonValidarLogin" HorizontalOptions="CenterAndExpand" />
+                    <Label Style="{StaticResource estiloColorAlingLabel}" Margin="0,10,0,0" Text="¿No tienes cuenta? ¡Registrate!" FontAttributes="None" TextDecorations="Underline">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding RegistarUsuarioCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+
+

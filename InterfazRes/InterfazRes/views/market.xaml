@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:InterfazRes.viewModel"
+             x:Class="InterfazRes.market" BackgroundColor="LightBlue">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel x:Name="vm" />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <FlexLayout Direction="Column">
+            <ScrollView>
+                <StackLayout>
+                    <Frame HorizontalOptions="FillAndExpand" Padding="4" >
+                        <Label x:Name="ControlCelularesRobados" Text="DARKPHONE" FontSize="30" FontAttributes="Bold" Margin="0,8,0,0" HorizontalOptions="Center" />
+                    </Frame>
+                    <Label Text="Celulares Nuevos" Margin="10" FontAttributes="Bold" FontSize="20" />
+                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                        <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding ProductsListNuevos}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame CornerRadius="10" Margin="10">
+                                        <StackLayout>
+                                            <Image Source="celularGenerico.jpg" HeightRequest="150"/>
+                                            <Frame BackgroundColor="DarkBlue" Padding="6" CornerRadius="20" HorizontalOptions="FillAndExpand">
+                                                <Label Text="{Binding strNombre}" HorizontalTextAlignment="Center" TextColor="White" FontSize="17">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding MostrarInfoCelularCommand}" CommandParameter="{Binding intIdProducto}" />
+                                                    </Label.GestureRecognizers>
+                                                </Label>
+                                            </Frame>
+                                        </StackLayout>
+                                    </Frame>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </ScrollView>
+                    <Label Text="Celulares Usados" Margin="10" FontAttributes="Bold" FontSize="20"/>
+                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                        <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding ProductsListUsados}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame CornerRadius="10" Margin="10">
+                                        <StackLayout>
+                                            <Image Source="celularGenerico.jpg" HeightRequest="150"/>
+                                            <Frame BackgroundColor="DarkBlue" Padding="6" CornerRadius="20" HorizontalOptions="FillAndExpand">
+                                                <Label Text="{Binding strNombre}" HorizontalTextAlignment="Center" TextColor="White" FontSize="17">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding MostrarInfoCelularCommand}" CommandParameter="{Binding intIdProducto}" />
+                                                    </Label.GestureRecognizers>
+                                                </Label>
+                                            </Frame>
+                                        </StackLayout>
+                                    </Frame>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </ScrollView>
+                    <Label Text="Celulares Robados" Margin="10" FontAttributes="Bold" FontSize="20" x:Name="labelCelularesRobados" IsVisible="False" />
+                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" x:Name="contenCelularesRobados" IsVisible="False" >
+                        <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding ProductsListRobados}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame CornerRadius="10" Margin="10">
+                                        <StackLayout>
+                                            <Image Source="celularGenerico.jpg" HeightRequest="150"/>
+                                            <Frame BackgroundColor="DarkBlue" Padding="6" CornerRadius="20" HorizontalOptions="FillAndExpand">
+                                                <Label Text="{Binding strNombre}" HorizontalTextAlignment="Center" TextColor="White" FontSize="17">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding MostrarInfoCelularCommand}" CommandParameter="{Binding intIdProducto}" />
+                                                    </Label.GestureRecognizers>
+                                                </Label>
+                                            </Frame>
+                                        </StackLayout>
+                                    </Frame>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            </ScrollView>
+        </FlexLayout>
+    </ContentPage.Content>
+</ContentPage>

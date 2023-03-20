@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:InterfazRes.viewModel"
+             x:Class="InterfazRes.RegisterUser">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel x:Name="vm" />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="LightBlue">
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="estiloColorLabel" TargetType="Label">
+                        <Setter Property="TextColor" Value="Black" />
+                        <Setter Property="FontSize" Value="15" />
+                        <Setter Property="FontAttributes" Value="Bold" />
+                    </Style>
+                    <Style x:Key="estiloColorEntry" TargetType="Entry">
+                        <Setter Property="PlaceholderColor" Value="DarkSlateGray" />
+                        <Setter Property="TextColor" Value="DarkSlateGray" />
+                        <Setter Property="WidthRequest" Value="200" />
+                        <Setter Property="Margin" Value="0,0,0,30" />
+                    </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+            <Frame VerticalOptions="FillAndExpand" Margin="20" CornerRadius="20" >
+                <StackLayout VerticalOptions="FillAndExpand" Margin="10,0,10,0">
+                    <Label FontAttributes="Bold" TextColor="Black" FontSize="20" HorizontalTextAlignment="Center" Text="Registrar Usuario" Padding="0,10,0,30" />
+                    
+                    <Label Style="{StaticResource estiloColorLabel}" Text="Nombres" />
+                    <Entry Style="{StaticResource estiloColorEntry}" x:Name="txtNombres" Placeholder="Ingrese sus nombres" />
+                    
+                    <Label Style="{StaticResource estiloColorLabel}" Text="Apellidos" />
+                    <Entry Style="{StaticResource estiloColorEntry}" x:Name="txtApellidos" Placeholder="Ingrese sus apellidos" />
+                    
+                    <Label Style="{StaticResource estiloColorLabel}" Text="Identificacion" />
+                    <Entry Style="{StaticResource estiloColorEntry}" x:Name="txtIdentificacion" Placeholder="Ingrese su identificacion" />
+
+                    <Label Style="{StaticResource estiloColorLabel}" Text="Nombre de usuario"  />
+                    <Entry Style="{StaticResource estiloColorEntry}" x:Name="txtUsuario" Placeholder="Ingrese un nombre de usuario" />
+
+                    <Label Style="{StaticResource estiloColorLabel}" Text="Contraseña" />
+                    <Entry Style="{StaticResource estiloColorEntry}" IsPassword="True" x:Name="txtContrasena" Placeholder="Ingrese una contraseña" />
+
+                    <Button CornerRadius="20" Margin="0,40,0,0" WidthRequest="300" Text="¡Registrar!" TextTransform="Uppercase" TextColor="White" BackgroundColor="DarkBlue" Clicked="ButtonRegistrarUsuario" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

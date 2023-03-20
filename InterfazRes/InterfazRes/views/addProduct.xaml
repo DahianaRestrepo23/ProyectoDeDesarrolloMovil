@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:InterfazRes.viewModel"
+             x:Class="InterfazRes.addProduct" BackgroundColor="LightBlue">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel x:Name="vm" />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <FlexLayout Direction="Column">
+            <ScrollView>
+                <StackLayout>
+                    <StackLayout.Resources>
+                        <ResourceDictionary>
+                            <Style x:Key="estiloColorLabel" TargetType="Label">
+                                <Setter Property="TextColor" Value="Black" />
+                                <Setter Property="FontSize" Value="15" />
+                                <Setter Property="FontAttributes" Value="Bold" />
+                            </Style>
+                            <Style x:Key="estiloColorEntry" TargetType="Entry">
+                                <Setter Property="PlaceholderColor" Value="DarkSlateGray" />
+                                <Setter Property="TextColor" Value="DarkSlateGray" />
+                                <Setter Property="WidthRequest" Value="200" />
+                                <Setter Property="Margin" Value="0,0,0,30" />
+                            </Style>
+                            <Style x:Key="estiloColorEditor" TargetType="Editor">
+                                <Setter Property="PlaceholderColor" Value="DarkSlateGray" />
+                                <Setter Property="TextColor" Value="DarkSlateGray" />
+                                <Setter Property="WidthRequest" Value="200" />
+                                <Setter Property="Margin" Value="0,0,0,30" />
+                            </Style>
+                        </ResourceDictionary>
+                    </StackLayout.Resources>
+                    <Frame HorizontalOptions="FillAndExpand" Padding="4" >
+                        <Label x:Name="ControlCelularesRobados" Text="DARKPHONE" FontSize="30" FontAttributes="Bold" Margin="0,8,0,0" HorizontalOptions="Center" />
+                    </Frame>
+                    <Frame VerticalOptions="FillAndExpand" Margin="20" CornerRadius="20" >
+                        <StackLayout VerticalOptions="FillAndExpand" Margin="10,0,10,0">
+                            <Label FontAttributes="Bold" TextColor="Black" FontSize="20" HorizontalTextAlignment="Center" Text="Registrar Producto" Padding="0,10,0,30" />
+
+                            <Label Style="{StaticResource estiloColorLabel}" Text="Nombre" />
+                            <Entry Style="{StaticResource estiloColorEditor}" x:Name="txtNombre" Placeholder="Ingrese el nombre" />
+
+                            <Label Style="{StaticResource estiloColorLabel}" Text="Descripcion" />
+                            <Editor Style="{StaticResource estiloColorEntry}" x:Name="txtDescripcion" Placeholder="Ingrese la descripcion" />
+
+                            <Label Style="{StaticResource estiloColorLabel}" Text="Precio" />
+                            <Entry Style="{StaticResource estiloColorEntry}" x:Name="txtPrecio" Keyboard="Numeric" Placeholder="Ingrese el precio" />
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+
+                                <CheckBox IsChecked="False" x:Name="chkEsUsado" Grid.Column="0" />
+                                <Label Margin="0,5,0,0" Style="{StaticResource estiloColorLabel}" Text="¿Es usado?" Grid.Column="1" />
+                            </Grid>
+
+                            <StackLayout IsVisible="False" x:Name="controladorRobado">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+
+                                    <CheckBox IsChecked="False" CheckedChanged="CheckEsRobado_CheckedChanged" x:Name="chkEsRobado" Grid.Column="0" />
+                                    <Label Margin="0,5,0,0" Style="{StaticResource estiloColorLabel}" Text="¿Es robado?" Grid.Column="1" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+
+                                    <CheckBox IsChecked="False" x:Name="chkEstaReportado" Grid.Column="0" />
+                                    <Label Margin="0,5,0,0" Style="{StaticResource estiloColorLabel}" Text="¿Esta reportado?" Grid.Column="1" />
+                                </Grid>
+                            </StackLayout>
+
+                            <Button CornerRadius="20" Margin="0,40,0,0" WidthRequest="300" Text="¡Guardar!" TextTransform="Uppercase" TextColor="White" BackgroundColor="DarkBlue" HorizontalOptions="CenterAndExpand" Clicked="btnGuardar_Clicked" />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </FlexLayout>
+    </ContentPage.Content>
+</ContentPage>
