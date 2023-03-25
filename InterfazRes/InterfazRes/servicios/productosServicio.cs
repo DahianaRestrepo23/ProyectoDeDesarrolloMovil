@@ -18,8 +18,7 @@ namespace InterfazRes.servicios
                 SchemaVersion = currentSchemaVersion,
                 MigrationCallback = (Migration migration, ulong oldSchemaVersion) =>
                 {
-                    // initial app release / no schema migration
-                    // This will NOT be called
+                    
                 }
             };
 
@@ -38,8 +37,7 @@ namespace InterfazRes.servicios
                 SchemaVersion = currentSchemaVersion,
                 MigrationCallback = (Migration migration, ulong oldSchemaVersion) =>
                 {
-                    // initial app release / no schema migration
-                    // This will NOT be called
+                  
                 }
             };
 
@@ -71,8 +69,7 @@ namespace InterfazRes.servicios
                 SchemaVersion = currentSchemaVersion,
                 MigrationCallback = (Migration migration, ulong oldSchemaVersion) =>
                 {
-                    // initial app release / no schema migration
-                    // This will NOT be called
+                    
                 }
             };
 
@@ -98,8 +95,7 @@ namespace InterfazRes.servicios
                 SchemaVersion = currentSchemaVersion,
                 MigrationCallback = (Migration migration, ulong oldSchemaVersion) =>
                 {
-                    // initial app release / no schema migration
-                    // This will NOT be called
+                    
                 }
             };
 
@@ -125,8 +121,7 @@ namespace InterfazRes.servicios
                 SchemaVersion = currentSchemaVersion,
                 MigrationCallback = (Migration migration, ulong oldSchemaVersion) =>
                 {
-                    // initial app release / no schema migration
-                    // This will NOT be called
+                    
                 }
             };
 
@@ -146,8 +141,7 @@ namespace InterfazRes.servicios
                 SchemaVersion = currentSchemaVersion,
                 MigrationCallback = (Migration migration, ulong oldSchemaVersion) =>
                 {
-                    // initial app release / no schema migration
-                    // This will NOT be called
+                    
                 }
             };
 
