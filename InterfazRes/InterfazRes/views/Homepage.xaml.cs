@@ -17,7 +17,7 @@ namespace InterfazRes
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            //Task.Run(RotateImage);
+            
 
             user = actUser;
         }
