@@ -18,8 +18,7 @@ namespace InterfazRes.servicios
                 SchemaVersion = currentSchemaVersion,
                 MigrationCallback = (Migration migration, ulong oldSchemaVersion) =>
                 {
-                    // initial app release / no schema migration
-                    // This will NOT be called
+                    
                 }
             };
 
@@ -38,8 +37,7 @@ namespace InterfazRes.servicios
                 SchemaVersion = currentSchemaVersion,
                 MigrationCallback = (Migration migration, ulong oldSchemaVersion) =>
                 {
-                    // initial app release / no schema migration
-                    // This will NOT be called
+                   
                 }
             };
 
@@ -58,8 +56,7 @@ namespace InterfazRes.servicios
                 SchemaVersion = currentSchemaVersion,
                 MigrationCallback = (Migration migration, ulong oldSchemaVersion) =>
                 {
-                    // initial app release / no schema migration
-                    // This will NOT be called
+                    
                 }
             };
 
@@ -90,8 +87,7 @@ namespace InterfazRes.servicios
                 SchemaVersion = currentSchemaVersion,
                 MigrationCallback = (Migration migration, ulong oldSchemaVersion) =>
                 {
-                    // initial app release / no schema migration
-                    // This will NOT be called
+                    
                 }
             };
 
@@ -109,13 +105,6 @@ namespace InterfazRes.servicios
             }
         }
 
-        // Consulta y actualiza desde cualquier hilo (thread)
-        //new Thread(() =>
-        //{
-        //    var realm2 = Realm.GetInstance();
-
-        //    var theDog = realm2.All<Dog>().Where(d => d.Age == 1).First();
-        //    realm2.Write(() => theDog.Age = 3);
-        //}).Start();
+       
     }
 }
