@@ -32,12 +32,6 @@ namespace InterfazRes
             await Navigation.PushModalAsync(new addProduct(user));
         }
 
-        //private async void RotateImage()
-        //{
-        //    while (true)
-        //    {
-        //        await BannerImg.RelRotateTo(369, 10000, Easing.Linear);
-        //    }
-        //}
+        
     }
 }
