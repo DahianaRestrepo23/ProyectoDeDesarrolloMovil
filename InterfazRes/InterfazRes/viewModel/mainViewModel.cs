@@ -28,32 +28,10 @@ namespace InterfazRes.viewModel
 
         public ICommand RegistarUsuarioCommand => new Command(() => Application.Current.MainPage.Navigation.PushAsync(new RegisterUser()));
 
-        //public List<Pick> Picks { get; set; }
-        //public ICommand OrderCommand => new Command(() => Application.Current.MainPage.Navigation.PushAsync(new OrderPage()));
-
-        //private List<Pick> GetPicks()
-        //{
-        //    return new List<Pick>
-        //    {
-        //        new Pick
-        //        {
-        //            Title = "Desayuno", Image = "IMG01.png", Description = "Ordene un desayuno europeo"
-        //        },
-        //        new Pick
-        //        {
-        //            Title = "Almuerzo", Image = "IMG03.png", Description = "Ordene un almuerzo europeo" }
-        //        };
-        //}
+       
     }
 
-    //public class Pick
-    //{
-    //    public string Title { get; set; }
-    //    public string Image { get; set; }
-    //    public string Description { get; set; }
-    //    public string Price { get; set; }
-
-    //}
+    
 
     public class BaseViewModel : INotifyPropertyChanged
     {
